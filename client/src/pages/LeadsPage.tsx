@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Layout } from '../components/layout/Layout';
 import { leadsApi } from '../api/leads.api';
-import type { Lead, LeadFilters, LeadStatus, LeadSource } from '../types';
+import type { Lead, LeadFilters } from '../types';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Select } from '../components/ui/Select';
@@ -10,7 +10,7 @@ import { Modal } from '../components/ui/Modal';
 import { LeadForm } from '../components/leads/LeadForm';
 import { useAuth } from '../context/AuthContext';
 import { useDebounce } from '../hooks/useDebounce';
-import { Search, Plus, Filter, Download, Trash2, Edit2, MoreHorizontal } from 'lucide-react';
+import { Search, Plus, Filter, Download, Trash2, Edit2 } from 'lucide-react';
 
 export const LeadsPage: React.FC = () => {
   const { user } = useAuth();
