@@ -6,8 +6,8 @@ import { AppError } from '../utils/AppError';
 import { AuthRequest } from '../types';
 
 const signToken = (id: string) => {
-  return jwt.sign({ id }, env.JWT_SECRET, {
-    expiresIn: env.JWT_EXPIRES_IN,
+  return jwt.sign({ id }, env.JWT_SECRET as string, {
+    expiresIn: env.JWT_EXPIRES_IN as any,
   });
 };
 

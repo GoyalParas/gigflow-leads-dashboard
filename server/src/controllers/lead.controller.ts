@@ -5,7 +5,7 @@ import { Parser } from 'json2csv';
 
 export const createLead = async (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
-    const lead = await LeadService.createLead(req.body, req.user!._id);
+    const lead = await LeadService.createLead(req.body, String(req.user!._id));
     res.status(201).json({ success: true, data: lead });
   } catch (error) {
     next(error);
@@ -24,7 +24,7 @@ export const getLeads = async (req: Request, res: Response, next: NextFunction) 
 
 export const getLeadById = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const lead = await LeadService.getLeadById(req.params.id);
+    const lead = await LeadService.getLeadById(req.params.id as string);
     res.status(200).json({ success: true, data: lead });
   } catch (error) {
     next(error);
@@ -33,7 +33,7 @@ export const getLeadById = async (req: Request, res: Response, next: NextFunctio
 
 export const updateLead = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const lead = await LeadService.updateLead(req.params.id, req.body);
+    const lead = await LeadService.updateLead(req.params.id as string, req.body);
     res.status(200).json({ success: true, data: lead });
   } catch (error) {
     next(error);
@@ -42,7 +42,7 @@ export const updateLead = async (req: Request, res: Response, next: NextFunction
 
 export const deleteLead = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    await LeadService.deleteLead(req.params.id);
+    await LeadService.deleteLead(req.params.id as string);
     res.status(200).json({ success: true, message: 'Lead deleted successfully' });
   } catch (error) {
     next(error);
