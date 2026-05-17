@@ -1,5 +1,7 @@
 # GigFlow – Smart Leads Dashboard
 
+🔗 **Live Demo:** https://gigflow-leads-dashboard.vercel.app/
+
 A full-stack Lead Management Dashboard built with the MERN stack using TypeScript. This project focuses on clean architecture, scalability, and a professional user experience.
 
 ## Features
@@ -22,57 +24,9 @@ A full-stack Lead Management Dashboard built with the MERN stack using TypeScrip
 
 ## Project Structure
 
-```
+```bash
 ├── client/          # Frontend React Application
 ├── server/          # Backend Express API
 ├── docker-compose.yml
 ├── API_DOCS.md      # Detailed API endpoints documentation
 └── README.md
-```
-
-## Getting Started
-
-### Local Development
-
-#### Prerequisites
-- Node.js (v18+)
-- MongoDB (Running locally or on Atlas)
-
-#### 1. Setup Backend
-```bash
-cd server
-cp .env.example .env
-npm install
-npm run dev
-```
-
-#### 2. Setup Frontend
-```bash
-cd client
-npm install
-npm run dev
-```
-
-The frontend will be available at `http://localhost:5173`.
-
-### Using Docker
-
-```bash
-docker-compose up --build
-```
-- Client: `http://localhost`
-- Server: `http://localhost:5000`
-
-## API Reference
-
-See [API_DOCS.md](./API_DOCS.md) for full endpoint details.
-
-## Evaluation Criteria Met
-
-- [x] **TypeScript Usage**: Mandatory throughout the project with defined interfaces.
-- [x] **Clean Architecture**: Standardized response format, centralized error handling, validation.
-- [x] **UI/UX**: Responsive design, dark mode, loading/empty states, glassmorphism aesthetics.
-- [x] **Debounced Search**: Implemented on the Leads page.
-- [x] **RBAC**: Admin can delete leads, sales users cannot.
-- [x] **CSV Export**: Fully functional with filters.
-- [x] **Pagination**: Backend skip/limit with metadata.
